@@ -1,0 +1,260 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 110rem;
+  margin: 0 auto;
+  padding-top: 3rem;
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-inline: 2.2rem;
+}
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.logo {
+  height: 3rem;
+}
+.nav-item:link,
+.nav-item:visited {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: hsl(240, 100%, 5%);
+  transition: all 0.3s;
+}
+
+.nav-item:hover,
+.nav-item:active {
+  color: hsl(5, 85%, 63%);
+}
+.main-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding-inline: 2.2rem;
+}
+
+.img-web-3 {
+  grid-column: span 2;
+}
+.img-web-3 img {
+  width: 100%;
+}
+.aside-bar {
+  grid-row: span 2;
+}
+
+.aside-bar {
+  background-color: hsl(240, 100%, 5%);
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.new-text {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: hsl(35, 77%, 62%);
+  margin-bottom: 1.6rem;
+}
+
+.aside-container {
+  margin-bottom: 2.4rem;
+  border-bottom: 1px solid hsl(236, 13%, 42%);
+}
+
+.aside-container:last-child {
+  border: none;
+}
+.secondary-heading {
+  font-size: 1.8rem;
+  color: hsl(36, 100%, 99%);
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.aside-text {
+  font-size: 1.5rem;
+  color: hsl(233, 8%, 79%);
+  padding-bottom: 2.4rem;
+}
+
+.primary-heading {
+  font-size: 5.2rem;
+  color: hsl(240, 100%, 5%);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.text-container {
+  padding: 1.2rem;
+}
+
+.text-container p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: hsl(240, 100%, 5%);
+  margin-bottom: 1.6rem;
+}
+
+.btn:link,
+.btn:visited {
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: hsl(5, 85%, 63%);
+  color: hsl(36, 100%, 99%);
+  padding: 1.2rem 2.4rem;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: hsl(240, 100%, 5%);
+}
+
+.small-container {
+  display: flex;
+  gap: 2.4rem;
+}
+
+.small-container img {
+  width: 9.6rem;
+}
+
+.number {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #aaa;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+}
+.log-heading {
+  font-size: 1.6rem;
+  color: hsl(240, 100%, 5%);
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+}
+
+.blog-text {
+  font-size: 1.5rem;
+  color: hsl(236, 13%, 42%);
+}
+
+.header-section button {
+  border: none;
+  background: none;
+  display: none;
+}
+
+.header-section button img {
+  width: 2.2rem;
+}
+.nav-mobile-close {
+  display: none;
+}
+
+@media (max-width: 25em) {
+  .main-section {
+    grid-template-columns: 1fr;
+  }
+  .img-web-3 {
+    grid-column: span 1;
+  }
+  .aside-bar {
+    grid-row: 4;
+    margin-bottom: 3.2rem;
+  }
+
+  .primary-heading {
+    font-size: 4.4rem;
+  }
+
+  .small-container img {
+    width: 11.5rem;
+  }
+  .text-container {
+    margin-bottom: 3.2rem;
+    padding: 0;
+  }
+
+  .header-section button {
+    display: block;
+    z-index: 99;
+  }
+
+  .container {
+    padding-inline: 2.2rem;
+  }
+
+  .main-nav-list {
+    position: absolute;
+    background-color: #ffffff8e;
+    backdrop-filter: blur(20px);
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 3.5rem;
+    height: 100vh;
+    width: 65%;
+    align-items: start;
+    justify-content: center;
+    font-size: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    appearance: none;
+    transition: all 0.5s;
+    transform: translateX(100%);
+  }
+  .nav-open .main-nav-list {
+    opacity: 1;
+    pointer-events: all;
+    appearance: visible;
+    transform: translateX(0);
+  }
+  .nav-open .icon-mobile[name="menu-outline"] {
+    display: none;
+  }
+  .nav-open .icon-mobile[name="close-outline"] {
+    display: block;
+  }
+  .nav-item:link,
+  .nav-item:visited {
+    font-size: 1.8rem;
+
+    margin-left: 2rem;
+  }
+}
+
+/*       FONT SIZE SYSTEM (px)
+      10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+      
+       -SPACING SYSTEM (px)
+      2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+      
+      */
